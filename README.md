@@ -37,9 +37,9 @@ Your generated Dash app will have:
 ## TODO
 
 - create more tests for this cookiecutter with [pytest-cookies](https://github.com/hackebrot/pytest-cookies)
+- add [bumpversion](https://github.com/peritus/bumpversion) to generated project.
 - create tests for the generated project
 - create simple dash callbacks
 - Better README
 - More modular project tree?
-- [tox](https://tox.readthedocs.io/en/latest/) integration?
 - Docker integration?
