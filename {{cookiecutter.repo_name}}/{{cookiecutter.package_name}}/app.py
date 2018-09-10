@@ -62,6 +62,7 @@ def create_header():
 
 def create_content():
     """page content"""
+    # placeholder for the input controls
     inputs = html.Div(
         html.Div(
             [
@@ -78,6 +79,7 @@ def create_content():
         )
     )
 
+    # placeholder for some charts
     outputs = html.Div(
         [
             dcc.Graph(
@@ -123,9 +125,6 @@ def create_footer():
         ],
         className="navbar navbar-default navbar-fixed-bottom",
     )
-
-    div = html.Div([p0, p1, a_fa])
-    footer = html.Footer(children=div, style=footer_style)
     return footer
 
 
