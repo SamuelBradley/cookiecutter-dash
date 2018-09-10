@@ -14,11 +14,11 @@ RE_OBJ = re.compile(PATTERN)
 @pytest.fixture
 def context():
     return {
-        "project_name": "My Test Project",
-        "repo_name": "my-test-project",
-        "package_name": "my_test_project",
-        "author_name": "Test Author",
-        "github_username": "test_user",
+        "project_name": "My Dash App",
+        "repo_name": "my-dash-app",
+        "package_name": "my_dash_app",
+        "author_name": "A Author",
+        "github_username": "a_author",
         "email": "you@example.com",
         "description": "A short description of the project.",
         "version": "0.1.0",
