@@ -11,3 +11,4 @@ tests/.cache/
 
 # environment variables
 *.env
+.vscode/
