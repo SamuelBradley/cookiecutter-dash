@@ -18,7 +18,7 @@ def context():
         "repo_name": "my-test-project",
         "package_name": "my_test_project",
         "author_name": "Test Author",
-        "github_username": "jackdbd",
+        "github_username": "test_user",
         "email": "you@example.com",
         "description": "A short description of the project.",
         "version": "0.1.0",
@@ -63,8 +63,8 @@ def test_default_configuration(cookies, context):
 
 def test_heroku_procfile(cookies, context):
     result = cookies.bake(extra_context=context)
-    procfile_path = os.path.join(result.project, 'Procfile')
-    with open(procfile_path, mode='r') as f:
+    procfile_path = os.path.join(result.project, "Procfile")
+    with open(procfile_path, mode="r") as f:
         heroku_config = f.readline()
         server_config = heroku_config.split()[2]
-        assert server_config == 'my_test_project.app:server'
+        assert server_config == "my_test_project.app:server"
