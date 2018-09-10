@@ -13,22 +13,19 @@
 
 ## Usage
 
-If you are on Linux and you have [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) installed you can run the script `utility/setup_virtualenv_and_repo.sh` to:
-
-- create a python virtual environment and activate it
-- install all project dependencies from `requirements.txt`
-- create a git repository
-- create your `Initial commit`
-
-Here is how you run the script:
+Create the Python virtual environment with [Pipenv](https://pipenv.readthedocs.io/en/latest/):
 
 ```shell
-cd {{cookiecutter.repo_name}}
-# mind the dot!
-. utility/setup_virtualenv_and_repo.sh
+pipenv install --dev
 ```
 
-Then you will need to create an `.env` file where to store your environment variables (SECRET key, plotly credentials, API keys, etc). Do NOT TRACK this `.env` file. See `.env.example`.
+To install [`black`](https://github.com/ambv/black) for code formatting, you need to install manually with pip after creating the main environment with pipenv. This is because `black` seems to be permanently in pre-release mode and I don't want to globally enable pre-releases in the `Pipfile`. The command is:
+
+```shell
+pipenv run pip install black
+```
+
+Then you will need to create an `.env` file where to store your environment variables (SECRET key, plotly credentials, API keys, etc). Do **NOT TRACK** this `.env` file in source control. See `.env.example`.
 
 Run all tests with a simple:
 
@@ -56,7 +53,7 @@ black .
 ## Pin your dependencies
 
 ```shell
-pip freeze > requirements.txt
+pipenv lock
 ```
 
 ## Deploy on Heroku
