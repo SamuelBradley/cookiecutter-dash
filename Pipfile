@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-
 binaryornot = "*"
 pytest = "*"
 pytest-cookies = "*"
@@ -12,3 +11,4 @@ python-dateutil = "*"
 
 [requires]
 python_version = "3.6"
+
