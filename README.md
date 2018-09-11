@@ -8,7 +8,7 @@ Styling is with [Bootstrap](https://getbootstrap.com/docs/3.3/).
 
 ## Usage
 
-Create a new Dash is as easy as 1-2-3.
+Creating a new Dash is as easy as 1-2-3.
 
 1. If you don't already have it, install `cookiecutter` globally:
 
