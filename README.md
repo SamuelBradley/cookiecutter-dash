@@ -37,7 +37,6 @@ Your generated Dash app will have:
 ## TODO
 
 - create more tests for this cookiecutter with [pytest-cookies](https://github.com/hackebrot/pytest-cookies).
-- add bumpversion config file
 - add simple dash callbacks
 - More modular project tree?
 - Docker integration?

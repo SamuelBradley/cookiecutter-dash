@@ -118,7 +118,7 @@ def create_footer():
             html.Div(
                 [
                     html.P("Footer text - LHS", className="navbar-text pull-left"),
-                    html.P("Footer text - RHS", className="navbar-text pull-right"),
+                    html.P("{0} {{cookiecutter.version}}".format(app_name), className="navbar-text pull-right"),
                 ],
                 className="container",
             )
