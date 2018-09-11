@@ -7,5 +7,7 @@
     "email": "you@example.com",
     "description": "A short description of the project.",
     "version": "0.1.0",
+    "copyright_year": "2018",
+    "copyright_message": "{{ cookiecutter.author_name }}",
     "open_source_license": ["MIT", "BSD", "GPLv3", "Not open source"]
 }

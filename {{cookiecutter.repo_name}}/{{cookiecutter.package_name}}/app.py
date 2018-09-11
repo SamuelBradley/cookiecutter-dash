@@ -11,6 +11,7 @@ from dash import Dash
 from dash.dependencies import Input, Output, State
 from dotenv import load_dotenv
 
+
 if "DYNO" in os.environ:
     # Heroku-specific config
     debug = False
@@ -41,7 +42,8 @@ app.title = app_name
 external_js = []
 
 external_css = [
-    "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
+    "https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
+    "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
     "https://codepen.io/chriddyp/pen/bWLwgP.css",
 ]
 
@@ -117,14 +119,34 @@ def create_footer():
         [
             html.Div(
                 [
-                    html.P("Footer text - LHS", className="navbar-text pull-left"),
-                    html.P("{0} {{cookiecutter.version}}".format(app_name), className="navbar-text pull-right"),
+                    html.P(
+                        [
+                            html.Span(
+                                "{0}, version {{ cookiecutter.version }}".format(
+                                    app_name
+                                ),
+                                className="text-muted",
+                            )
+                        ],
+                        className="navbar-text pull-left",
+                    ),
+                    html.P(
+                        [
+                            html.Span(className="fa fa-copyright text-muted"),
+                            html.Span(
+                                " {{cookiecutter.copyright_year}}, {{cookiecutter.copyright_message}}",
+                                className="text-muted",
+                            ),
+                        ],
+                        className="navbar-text pull-right",
+                    ),
                 ],
                 className="container",
             )
         ],
         className="navbar navbar-default navbar-fixed-bottom",
     )
+
     return footer
 
 
@@ -142,7 +164,6 @@ for js in external_js:
     app.scripts.append_script({"external_url": js})
 for css in external_css:
     app.css.append_css({"external_url": css})
-
 
 # TODO: callbacks
 
